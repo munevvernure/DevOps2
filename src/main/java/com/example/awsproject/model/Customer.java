@@ -13,12 +13,11 @@ import java.util.List;
 public class Customer {
     @Id
     private int custid;
-    private String firstname;
+    private String name;
     private String address;
-    private String city;
 
     @ManyToOne
-    @JoinColumn(name = "accountid", nullable = false)
+    @JoinColumn(name = "accid", nullable = false)
     private Account account;
 
 }

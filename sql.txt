@@ -1,0 +1,25 @@
+CREATE TABLE accounts (
+    accid INT PRIMARY KEY,
+    branch VARCHAR(100),
+    balance DECIMAL(10,2)
+);
+
+CREATE TABLE customers (
+    custid INT PRIMARY KEY,
+    name VARCHAR(100),
+    address TEXT,
+    accid INT,
+    FOREIGN KEY (accid) REFERENCES accounts(accid) ON DELETE SET NULL
+);
+
+INSERT INTO accounts (accid, branch, balance) VALUES
+(10, 'Ankara', 4000.00),
+(20, 'İstanbul', 10000.00),
+(30, 'İzmir', 20000.00);
+
+INSERT INTO customers (custid, name, address, accid) VALUES
+(10, 'Sema İrem Kardaş', 'Eskişehir', 10),
+(20, 'Kerim Tunçer', 'Karabük', 20),
+(30, 'Esra Çelik', 'Çorum', 30),
+(40, 'Şüheda Almina Dadak', 'Sakarya', 10),
+(50, 'Münevvernur Eraslan', 'İstanbul', 20);

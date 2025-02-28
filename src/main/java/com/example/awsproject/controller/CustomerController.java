@@ -40,9 +40,8 @@ public class CustomerController {
         Customer c = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found with id: " + id));
         c.setCustid(id);
-        c.setFirstname(customer.getFirstname());
+        c.setName(customer.getName());
         c.setAddress(customer.getAddress());
-        c.setCity(customer.getCity());
 
         Customer updatedCustomer = customerRepository.save(c);
         return new ResponseEntity<>(updatedCustomer,HttpStatus.OK);

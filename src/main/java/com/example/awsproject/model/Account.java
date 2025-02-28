@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name="accounts")
 public class Account {
     @Id
-    private int accountid;
+    private int accid;
     private String branch;
     private Float balance;
 
