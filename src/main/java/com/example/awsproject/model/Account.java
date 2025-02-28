@@ -17,9 +17,5 @@ public class Account {
     private String branch;
     private Float balance;
 
-
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<Customer> customers;
-
 }
 

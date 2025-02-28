@@ -16,8 +16,4 @@ public class Customer {
     private String name;
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "accid", nullable = false)
-    private Account account;
-
 }

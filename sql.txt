@@ -8,8 +8,19 @@ CREATE TABLE customers (
     custid INT PRIMARY KEY,
     name VARCHAR(100),
     address TEXT,
-    accid INT,
-    FOREIGN KEY (accid) REFERENCES accounts(accid) ON DELETE SET NULL
+);
+
+CREATE TABLE withdrawals (
+    id INT,
+    customer_custid INT,
+    account_accid INT,
+    date DATE,
+    amount DECIMAL(10,2),
+    PRIMARY KEY (custid, accid, id), 
+    FOREIGN KEY (custid) REFERENCES customers(custid) 
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (accid) REFERENCES accounts(accid) 
+        ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO accounts (accid, branch, balance) VALUES
@@ -17,9 +28,16 @@ INSERT INTO accounts (accid, branch, balance) VALUES
 (20, 'İstanbul', 10000.00),
 (30, 'İzmir', 20000.00);
 
-INSERT INTO customers (custid, name, address, accid) VALUES
+INSERT INTO customers (custid, name, address, city, accountid) VALUES
 (10, 'Sema İrem Kardaş', 'Eskişehir', 10),
 (20, 'Kerim Tunçer', 'Karabük', 20),
 (30, 'Esra Çelik', 'Çorum', 30),
 (40, 'Şüheda Almina Dadak', 'Sakarya', 10),
 (50, 'Münevvernur Eraslan', 'İstanbul', 20);
+
+INSERT INTO withdrawals (id, custid, accid, date, amount) VALUES
+(1, 10, 10, '2025-02-27', 500.00),
+(2, 20, 20, '2025-02-26', 2000.00),
+(3, 30, 30, '2025-02-25', 1500.00),
+(4, 40, 10, '2025-02-24', 300.00),
+(5, 50, 20, '2025-02-23', 400.00);
