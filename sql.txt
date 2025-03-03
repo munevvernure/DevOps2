@@ -25,15 +25,15 @@ CREATE TABLE withdrawals (
 
 INSERT INTO accounts (accid, branch, balance) VALUES
 (10, 'Ankara', 4000.00),
-(20, 'İstanbul', 10000.00),
-(30, 'İzmir', 20000.00);
+(20, 'Istanbul', 10000.00),
+(30, 'Izmir', 20000.00);
 
 INSERT INTO customers (custid, name, address) VALUES
-(10, 'Sema İrem Kardaş', 'Eskişehir'),
-(20, 'Kerim Tunçer', 'Karabük'),
-(30, 'Esra Çelik', 'Çorum'),
-(40, 'Şüheda Almina Dadak', 'Sakarya'),
-(50, 'Münevvernur Eraslan', 'İstanbul');
+(10, 'Sema Irem Kardas', 'Eskisehir'),
+(20, 'Kerim Tuncer', 'Karabuk'),
+(30, 'Esra Celik', 'Mardin'),
+(40, 'Süheda Almina Dadak', 'Sakarya'),
+(50, 'Munevvernur Eraslan', 'Istanbul');
 
 INSERT INTO withdrawals (id, customer_custid, account_accid, date, amount) VALUES
 (1, 10, 10, '2025-02-27', 500.00),
