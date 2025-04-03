@@ -32,7 +32,7 @@ INSERT INTO customers (custid, name, address) VALUES
 (10, 'Sema Irem Kardas', 'Eskisehir'),
 (20, 'Kerim Tuncer', 'Karabuk'),
 (30, 'Esra Celik', 'Mardin'),
-(40, 'Süheda Almina Dadak', 'Sakarya'),
+(40, 'Suheda Almina Dadak', 'Sakarya'),
 (50, 'Munevvernur Eraslan', 'Istanbul');
 
 INSERT INTO withdrawals (id, customer_custid, account_accid, date, amount) VALUES

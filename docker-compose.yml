@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  bankingapp:
+    container_name: bankingapp-container
+    image: munevvernure/bankingapp:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+    restart: always
+
+  mysqldb:
+    container_name: mysql-container
+    image: mysql
+    environment:
+      restart: always
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: swe304
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
